@@ -7,8 +7,6 @@ ln -sf /home/$USER/dotfiles/.bashrc /home/$USER/.bashrc
 # tmux
 ln -sf /home/$USER/dotfiles/.tmux /home/$USER/.tmux
 ln -sf /home/$USER/dotfiles/.tmux/.tmux.conf /home/$USER/.tmux.conf
-# bash competion
-sudo ln -sf /home/$USER/dotfiles/.bash_completion.d/docker_compose /etc/bash_completion.d/docker-compose
-sudo ln -sf /home/$USER/dotfiles/.bash_completion.d/kubectl /etc/bash_completion.d/kubectl
-sudo ln -sf /home/$USER/dotfiles/.bash_completion.d/minikube /etc/bash_completion.d/minikube
-
+# vim
+ln -sf /home/$USER/dotfiles/.vim /home/$USER/.vim
+ln -sf /home/$USER/dotfiles/.vimrc /home/$USER/.vimrc
