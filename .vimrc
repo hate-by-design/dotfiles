@@ -53,9 +53,7 @@ let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-" TagBar настройки
-map <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 0 " автофокус на Tagbar при открытии
+
 " показать NERDTree на F3
 map <F3> :NERDTreeToggle<CR>
 "игноррируемые файлы с расширениями
@@ -80,12 +78,13 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_doc = 0
 let g:pymode_doc_key = 'K'
 " проверка кода
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore="E501,W601,C0110"
+let g:pymode_lint = 0
+"let g:pymode_lint_checker = "pyflakes,pep8,pycodestyle"
+let g:pymode_lint_ignore = ['W0614', 'W0401']
+let g:pymode_lint_checkers = ['pylint']
 " провека кода после сохранения
-let g:pymode_lint_write = 1
-" поддержка virtualenv
+" let g:pymode_lint_write = 1
+let g:pymode_lint_on_fly = 1
 let g:pymode_virtualenv = 1
 " установка breakpoints
 let g:pymode_breakpoint = 1
@@ -100,6 +99,8 @@ let g:pymode_folding = 0
 " возможность запускать код
 let g:pymode_run = 0
 let g:pymode_options_colorcolumn = 0
+" Python 3 syntax
+let g:pymode_python = 'python3'
 " Disable choose first function/method at autocomplete
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "2"
@@ -107,3 +108,4 @@ let g:jedi#show_call_signatures = "2"
 inoremap <C-space> <C-x><C-o>
 nnoremap \ :noh<return>
 imap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+map <F4> :lcl<CR>
